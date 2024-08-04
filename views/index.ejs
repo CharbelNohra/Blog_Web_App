@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="/public/Styles/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog</title>
+        <link rel="stylesheet" href="/Styles/styles.css">
+    </head>
 
-<body>
-    <%- include('partials/header') %>
-        <div class="container">
-            <h1>All Posts</h1>
-            <ul>
-                <% posts.forEach((post, index)=> { %>
-                    <li>
-                        <h2>
-                            <%= post.title %>
-                        </h2>
-                        <p>
-                            <%= post.content %>
-                        </p>
-                        <a href="/edit/<%= index %>">Edit</a>
-                        <form action="/delete/<%= index %>" method="POST" style="display:inline;">
-                            <button type="submit">Delete</button>
-                        </form>
-                    </li>
-                    <% }) %>
-            </ul>
-        </div>
-        <%- include('partials/footer') %>
-</body>
+    <body>
+        <%- include('partials/header') %>
+            <div class="container">
+                <h1>All Posts</h1>
+                <ul>
+                    <% posts.forEach((post, index)=> { %>
+                        <li>
+                            <h2>
+                                <%= post.title %>
+                            </h2>
+                            <p>
+                                <%= post.content %>
+                            </p>
+                            <a href="/edit/<%= index %>">Edit</a>
+                            <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </li>
+                        <% }) %>
+                </ul>
+            </div>
+            <%- include('partials/footer') %>
+    </body>
 
 </html>
