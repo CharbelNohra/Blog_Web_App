@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <%- include('partials/header') %>
+        <%- include('../partials/header') %>
             <div class="container">
                 <h1>Edit Post</h1>
                 <form action="/edit/<%= id %>" method="POST">
@@ -27,7 +27,10 @@
                     <button type="submit">Delete Post</button>
                 </form>
             </div>
-            <%- include('partials/footer') %>
+            <div class="view">
+
+            </div>
+            <%- include('../partials/footer') %>
         <script src="/JS/script.js"></script>
     </body>
 

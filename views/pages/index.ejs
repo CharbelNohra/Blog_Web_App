@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <%- include('partials/header') %>
+        <%- include('../partials/header') %>
             <div class="container">
                 <h1>All Posts</h1>
                 <ul>
@@ -19,8 +19,9 @@
                                 <%= post.title %>
                             </h2>
                             <p>
-                                <%= post.content %>
+                                <%= post.content.substring(0, 100) %>...
                             </p>
+                            <a href="/post/<%= index %>">Read More</a>
                             <a href="/edit/<%= index %>">Edit</a>
                             <form action="/delete/<%= index %>" method="POST" style="display:inline;">
                                 <button type="submit">Delete</button>
@@ -29,8 +30,11 @@
                         <% }) %>
                 </ul>
             </div>
-            <%- include('partials/footer') %>
-        <script src="/JS/script.js"></script>
+            <div class="view">
+
+            </div>
+            <%- include('../partials/footer') %>
+                <script src="/JS/script.js"></script>
     </body>
 
 </html>

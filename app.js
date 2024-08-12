@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let posts = [];
 
 app.get("/", (req, res) => {
-    res.render("index.ejs", { posts: posts });
+    res.render("pages/index.ejs", { posts: posts });
 });
 
 app.get("/new", (req, res) => {
@@ -26,7 +26,12 @@ app.post("/new", (req, res) => {
 
 app.get("/edit/:id", (req, res) => {
     const post = posts[req.params.id];
-    res.render("edit.ejs", { post: post, id: req.params.id });
+    res.render("pages/edit.ejs", { post: post, id: req.params.id });
+});
+
+app.get("/post/:id", (req, res) => {
+    const post = posts[req.params.id];
+    res.render("pages/post.ejs", { post: post });
 });
 
 app.post("/edit/:id", (req, res) => {
